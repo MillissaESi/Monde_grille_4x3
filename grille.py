@@ -86,7 +86,7 @@ class grille:
                     val = k
                     action = a
             pi[(action, state)] = 1
-        return pi
+        return pi, v
 
     def policyIteration(self , eps):
         # pick an arbitrary policy
@@ -121,7 +121,7 @@ class grille:
                     k = self.states[state] + self.gam * self.transitionPolicy(a, state, v)
                     old_k = [a,k] if k > old_k[1] else old_k
                 pi[(old_k[0], state)] = 1
-        return pi
+        return pi, v
 
 """
   Environment 
@@ -131,7 +131,7 @@ lignes = 4
 columns = 3
 start = (0,0)
 terminals = {(3,1): -1, (3,2): 1}
-reward = -0.04
+reward = -100
 walls = [(1,1)]
 world = grille(lignes, columns, start, terminals, walls, reward,  gam)
 
@@ -141,15 +141,17 @@ world = grille(lignes, columns, start, terminals, walls, reward,  gam)
 
 
 eps = 0.001
-v_opt = world.policyIteration(eps)
+pi, v_opt = world.policyIteration(eps)
 print("optimal value ", v_opt)
+print(pi)
 
 
 
 
 eps = 0.001
-v_opt = world.valueIteration(eps)
+pi, v_opt = world.valueIteration(eps)
 print("optimal value ", v_opt)
+print(pi)
 
 
 
