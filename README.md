@@ -24,19 +24,20 @@ Policy + value iteration results
 
 #### 2. reward is a great negatif number: 
 
+Policy iteration: 
+
 ![Policy iteration](/images/fig3.png)
 
-Policy iteration
-
-#### 3. reward positive (great numbers):
-  Reward = 100 
+#### 3. reward positive (great numbers), Reward = 100 :
   
-![Policy iteration](/images/fig4.png)
+Policy iteration:
 
-Policy iteration
+![Policy iteration](/images/fig4.png)
+                  
+Value iteration: 
 
 ![Value iteration](/images/fig5.png)
 
-Value iteration
+                  
 
 
